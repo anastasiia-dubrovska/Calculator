@@ -57,7 +57,7 @@ namespace Calculator
 
                     if (!result.Success)
                     {
-                        Console.WriteLine($"Error: {result.ErrorMessage}\n");
+                        Console.WriteLine($"Error: {result.ErrorM}\n");
                     }
                     else
                     {
