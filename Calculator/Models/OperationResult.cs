@@ -10,7 +10,7 @@ namespace Calculator.Models
     {
         public bool Success { get; private set; }
         public double Value { get; private set; }
-        public string ErrorMessage { get; private set; }
+        public string ErrorM { get; private set; }
 
         private OperationResult() { }
 
@@ -28,7 +28,7 @@ namespace Calculator.Models
             return new OperationResult
             {
                 Success = false,
-                ErrorMessage = message
+                ErrorM = message
             };
         }
     }
