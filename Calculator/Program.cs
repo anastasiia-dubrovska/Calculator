@@ -12,7 +12,6 @@ namespace Calculator
         {
             static void Main(string[] args)
             {
-                Console.OutputEncoding = System.Text.Encoding.UTF8;
 
                 Console.WriteLine("1. Enter first number");
                 Console.WriteLine("2. Enter operation (+, -, *, /)");
