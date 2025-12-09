@@ -14,7 +14,7 @@ namespace Calculator.Services
         {
             if (!double.TryParse(input, out number))
             {
-                LastError = "Введено нечислове значення.";
+                LastError = "Incorrect input";
                 return false;
             }
             return true;
@@ -25,7 +25,7 @@ namespace Calculator.Services
             if (op == "+" || op == "-" || op == "*" || op == "/")
                 return true;
 
-            LastError = "Операція має бути +, -, * або /.";
+            LastError = "Operation must be +, -, * or /.";
             return false;
 
         }

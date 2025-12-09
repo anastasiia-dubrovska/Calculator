@@ -14,44 +14,42 @@ namespace Calculator
             {
                 Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-                Console.WriteLine("=== КАЛЬКУЛЯТОР ===");
-                Console.WriteLine("Інструкція:");
-                Console.WriteLine("1. Введіть перше число");
-                Console.WriteLine("2. Введіть операцію (+, -, *, /)");
-                Console.WriteLine("3. Введіть друге число");
-                Console.WriteLine("4. Отримаєте результат\n");
-                Console.WriteLine("Для виходу введіть 'exit'\n");
+                Console.WriteLine("1. Enter first number");
+                Console.WriteLine("2. Enter operation (+, -, *, /)");
+                Console.WriteLine("3. Enter second number");
+                Console.WriteLine("4. Result: \n");
+                Console.WriteLine("To enter print 'exit'\n");
 
                 var calculator = new CalculatorC();
                 var validator = new InputValidator();
 
                 while (true)
                 {
-                    Console.Write("Перше число: ");
+                    Console.Write("First number: ");
                     string inputA = Console.ReadLine();
                     if (inputA.ToLower() == "exit") break;
 
                     if (!validator.TryParseNumber(inputA, out double a))
                     {
-                        Console.WriteLine($"Помилка: {validator.LastError}\n");
+                        Console.WriteLine($"Error: {validator.LastError}\n");
                         continue;
                     }
 
-                    Console.Write("Операція (+, -, *, /): ");
+                    Console.Write("Operation (+, -, *, /): ");
                     string op = Console.ReadLine();
 
                     if (!validator.ValidateOperation(op))
                     {
-                        Console.WriteLine($"Помилка: {validator.LastError}\n");
+                        Console.WriteLine($"Error: {validator.LastError}\n");
                         continue;
                     }
 
-                    Console.Write("Друге число: ");
+                    Console.Write("Second number: ");
                     string inputB = Console.ReadLine();
 
                     if (!validator.TryParseNumber(inputB, out double b))
                     {
-                        Console.WriteLine($"Помилка: {validator.LastError}\n");
+                        Console.WriteLine($"Error: {validator.LastError}\n");
                         continue;
                     }
 
@@ -59,15 +57,13 @@ namespace Calculator
 
                     if (!result.Success)
                     {
-                        Console.WriteLine($"Помилка: {result.ErrorMessage}\n");
+                        Console.WriteLine($"Error: {result.ErrorMessage}\n");
                     }
                     else
                     {
-                        Console.WriteLine($"Результат: {result.Value}\n");
+                        Console.WriteLine($"Result: {result.Value}\n");
                     }
                 }
-
-                Console.WriteLine("Програму завершено.");
             }
         }
     }

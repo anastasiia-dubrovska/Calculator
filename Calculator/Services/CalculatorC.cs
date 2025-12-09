@@ -24,11 +24,11 @@ namespace Calculator.Services
 
                 case "/":
                     if (b == 0)
-                        return OperationResult.Error("Ділення на нуль неможливе.");
+                        return OperationResult.Error("Diviting by zero.");
                     return OperationResult.SuccessResult(a / b);
 
                 default:
-                    return OperationResult.Error("Невідома операція.");
+                    return OperationResult.Error("Unknown operation.");
             }
         }
     }
